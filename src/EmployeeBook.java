@@ -87,25 +87,24 @@ public class EmployeeBook {
         int max = 0;
         for (int i = 0; i < size; i++) {
             Employee employee = employees[i];
-            if (employee.getSalary() > max) {
-                max = employee.getSalary();
-                {
+            if (employees[i].getSalary() > max) {
+                max = employees[i].getSalary();
+
                     System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
                     System.out.println();
                 }
             }
         }
-    }
+
+
     public void printMinSalary() {
         int min = 100000;
         for (int i = 0; i < size; i++) {
             Employee employee = employees[i];
-            if (employee.getSalary() < min) {
-                min = employee.getSalary();
-                {
-                    System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
-                    System.out.println();
-                }
+            if (employees[i].getSalary() < min) {
+                min = employees[i].getSalary();
+                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
+                System.out.println();
             }
         }
     }
