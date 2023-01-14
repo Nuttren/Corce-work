@@ -85,30 +85,44 @@ public class EmployeeBook {
     // // Реализуем метод printMaxSalary (распечатать контакт с максимальной зп)
     public void printMaxSalary() {
         int max = 0;
+        Employee employee = employees[0];
         for (int i = 0; i < size; i++) {
-            Employee employee = employees[i];
             if (employees[i].getSalary() > max) {
                 max = employees[i].getSalary();
-
-                    System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
-                    System.out.println();
-                }
+                employee = employees[i];
             }
         }
+        System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
+        System.out.println();
+    }
 
-
+    // контакт с минимальной зп
     public void printMinSalary() {
         int min = 100000;
+        Employee employee = employees[0];
         for (int i = 0; i < size; i++) {
-            Employee employee = employees[i];
             if (employees[i].getSalary() < min) {
                 min = employees[i].getSalary();
-                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
-                System.out.println();
+                employee = employees[i];
             }
+        }
+        System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
+        System.out.println();
+    }
+
+    // все сотруднки без департамента
+    public void printAllEmployeeExDep() {
+        for (int i = 0; i < size; i++) {
+            Employee employee = employees[i];
+
+            System.out.println(employee.getNick() + ": " + employee.getSalary() + ": " + employee.getId());
         }
     }
 }
+
+
+
+
 
 
 

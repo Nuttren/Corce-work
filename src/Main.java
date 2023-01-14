@@ -17,6 +17,7 @@ public class Main {
         employeeBook.printAllEmployeeNick();
         employeeBook.printMaxSalary();
         employeeBook.printMinSalary ();
+        employeeBook.printAllEmployeeExDep();
         employeeBook.getCurrentSize();
     }
 

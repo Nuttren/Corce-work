@@ -24,7 +24,7 @@ public class Employee {
                 ')';
     }
 
-    private  String employeeNick;
+    private final String employeeNick;
     // Объявили свойство nick (ФИО)
     private String department;
     // Объявили свойство phone (номер телефона)
