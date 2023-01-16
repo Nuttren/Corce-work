@@ -1,10 +1,12 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class EmployeeBook {
     private Employee[] employees;
     // Объявили массив Employee, реализуемый в классе Employee
     private int size;
     // Объявили свойство size (размер)
+
 
     public EmployeeBook() {
         this.employees = new Employee[10];
@@ -98,7 +100,7 @@ public class EmployeeBook {
 
     // контакт с минимальной зп
     public void printMinSalary() {
-        int min = 100000;
+        int min = Integer.MAX_VALUE;
         Employee employee = employees[0];
         for (int i = 0; i < size; i++) {
             if (employees[i].getSalary() < min) {
@@ -116,9 +118,73 @@ public class EmployeeBook {
             Employee employee = employees[i];
 
             System.out.println(employee.getNick() + ": " + employee.getSalary() + ": " + employee.getId());
+            System.out.println();
+        }
+    }
+
+    // все сотрудники с зп ниже
+    public void checkSalaryMin(int checkSalary) {
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getSalary() <= checkSalary) {
+                Employee employee = employees[i];
+                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
+            }
+        }
+        System.out.println();
+    }
+
+    // все сотрудники с зп выше
+    public void checkSalaryMax(int checkSalary) {
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getSalary() >= checkSalary) {
+                Employee employee = employees[i];
+                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary() + ": " + employee.getId());
+            }
+        }
+        System.out.println();
+    }
+
+    // индексировать зп на определенный процент из main
+    public void indexationSalary(double indexSalary) {
+
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getSalary() > 0) {
+                Employee employee = employees[i];
+                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + (employee.getSalary() + (employee.getSalary() * indexSalary)) + ": " + employee.getId());
+            }
+        }
+        System.out.println();
+    }
+
+    // изменить департамент и зп сотрудника через сканнер^^
+    public void changeEmployee(String employeeNick) {
+        for (int i = 0; i < size; i++) {
+            Employee employee = employees[i];
+            if (employee.getNick().equals(employeeNick)) {
+                Scanner in = new Scanner(System.in);
+                System.out.print("Введите департамент: ");
+                employee.setDepartment(in.nextLine());
+                System.out.print("Введите зарплату: ");
+                employee.setSalary(in.nextInt());
+                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary());
+                in.close();
+                return;
+            }
+        }
+        System.out.println(employeeNick + " не найден");
+    }
+
+    // вывести сотрудников конкретного отдела
+    public void showEmployees(String employeeDepartment) {
+        for (int i = 0; i < size; i++) {
+            Employee employee = employees[i];
+            if (employee.getDepartment().equals(employeeDepartment)) {
+                System.out.println(employee.getNick() + ": " + employee.getDepartment() + ": " + employee.getSalary());
+            }
         }
     }
 }
+
 
 
 
