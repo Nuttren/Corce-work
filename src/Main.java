@@ -22,8 +22,9 @@ public class Main {
         employeeBook.checkSalaryMax(10000);
         employeeBook.indexationSalary(0.15);
   //      employeeBook.removeEmployee("Иван Иванов");
-        employeeBook.changeEmployee("Иван Иванов");
+      //  employeeBook.changeEmployee("Павел Павлов");
         employeeBook.showEmployees("2");
+        employeeBook.averageSalary();
 
     }
 
