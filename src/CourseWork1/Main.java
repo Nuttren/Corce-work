@@ -1,3 +1,7 @@
+package CourseWork1;
+
+import CourseWork1.EmployeeBook;
+
 public class Main {
     public static void main(String[] args) {
         EmployeeBook employeeBook = new EmployeeBook();
@@ -21,7 +25,7 @@ public class Main {
         employeeBook.checkSalaryMin(7500);
         employeeBook.checkSalaryMax(10000);
         employeeBook.indexationSalary(0.15);
-  //      employeeBook.removeEmployee("Иван Иванов");
+          employeeBook.removeEmployee("Иван Иванов");
       //  employeeBook.changeEmployee("Павел Павлов");
         employeeBook.showEmployees("2");
         employeeBook.averageSalary();

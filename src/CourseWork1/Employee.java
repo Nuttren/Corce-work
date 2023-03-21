@@ -1,3 +1,5 @@
+package CourseWork1;
+
 import java.util.Objects;
 
 public class Employee {
