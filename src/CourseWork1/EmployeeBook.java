@@ -1,16 +1,18 @@
+package CourseWork1;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class EmployeeBook {
     private Employee[] employees;
-    // Объявили массив Employee, реализуемый в классе Employee
+    // Объявили массив CourseWork1.Employee, реализуемый в классе CourseWork1.Employee
     private int size;
     // Объявили свойство size (размер)
 
 
     public EmployeeBook() {
         this.employees = new Employee[10];
-        // Задали массиву Employee длину — 10
+        // Задали массиву CourseWork1.Employee длину — 10
     }
 
     // Реализуем метод addContact (создать сотрудника):
